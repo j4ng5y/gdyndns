@@ -112,7 +112,7 @@ func main() {
 	flag.StringVar(&googleDomainsUsername, "username", "", "your google domains username")
 	flag.StringVar(&googleDomainsPassword, "password", "", "your google domains password")
 	flag.StringVar(&googleDomainsHostname, "hostname", "", "your google domains hostname to update")
-	flag.StringVar(&ipinfoAPIToken, "ipinfo-token", "", "Your ipinfo API Token")
+	flag.StringVar(&ipinfoAPIToken, "ipinfo-token", "", "your IPINFO.IO API Token")
 	flag.Parse()
 
 	switch {
