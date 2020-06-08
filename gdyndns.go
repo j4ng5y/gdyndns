@@ -26,10 +26,15 @@ const (
 
 type GoogleDomainsResponse http.Response
 
-func (G GoogleDomainsResponse) CheckError() error {
-	b, err := ioutil.ReadAll(G.Body)
-	if err != nil {
-		return err
+func (G GoogleDomainsResponse) CheckError() (err error) {
+	var b []byte
+	if G.Body != nil {
+		b, err = ioutil.ReadAll(G.Body)
+		if err != nil {
+			return err
+		}
+	} else {
+		return fmt.Errorf("body can not be nil")
 	}
 
 	r := strings.Split(string(b), " ")
