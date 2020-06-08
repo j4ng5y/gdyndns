@@ -1,0 +1,8 @@
+[Unit]
+Description=Dynamically update a google domains dynamic DNS entry
+
+[Service]
+Type=simple
+User=gdyndns
+ExecStart=/usr/bin/gdyndns -username <USERNAME> -password <PASSWORD> -hostname <HOSTNAME> -ipinfo-token <TOKEN>
+Restart=on-failure
